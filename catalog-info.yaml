@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: go-mjijqsvn-gitops
+  description: This is GitOps manifest for go-mjijqsvn   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=go-mjijqsvn
+    backstage.io/kubernetes-id: go-mjijqsvn 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: go-mjijqsvn
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:go-mjijqsvn
